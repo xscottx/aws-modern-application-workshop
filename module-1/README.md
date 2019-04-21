@@ -77,6 +77,7 @@ Both scripts do the following:
 * Removes any existing files in the bucket.
 * Copies the local files from the Angular build directory located at `frontend/dist`.
 * Prints the URL where you can visit your site.
+* URL HERE: http://mythical-mysfits-frontend-993906457390.s3-website.us-east-1.amazonaws.com
 
 To verify your S3 bucket was created, you can use these commands:
 ```
