@@ -431,6 +431,7 @@ Choose a new bucket name for these artifacts and create one using the following 
 ```
 aws s3 mb s3://REPLACE_ME_CHOOSE_ARTIFACTS_BUCKET_NAME
 ```
+
 Next, this bucket needs a bucket policy to define permissions for the data stored within it. But unlike our website bucket that allowed access to anyone, only our CI/CD pipeline should have access to this bucket.  We have provided the JSON file needed for this policy at `/module-2/aws-cli/artifacts-bucket-policy.json`.  Open this file, and inside you will need to replace several strings to include the ARNs that were created as part of the MythicalMysfitsCoreStack earlier, as well as your newly chosen bucket name for your CI/CD artifacts.
 
 Once you've modified and saved this file, execute the following command to grant access to this bucket to your CI/CD pipeline:
@@ -438,7 +439,10 @@ Once you've modified and saved this file, execute the following command to grant
 ```
 aws s3api put-bucket-policy --bucket REPLACE_ME_ARTIFACTS_BUCKET_NAME --policy file://module-2/aws-cli/artifacts-bucket-policy.json
 ```
-
+`Output`
+```
+aws s3api put-bucket-policy --bucket mythical-mysfits-frontend-993906457390 --policy file://aws-cli/artifacts-bucket-policy.json
+```
 #### Create a CodeCommit Repository
 
 You'll need a place to push and store your code in. Create an **AWS CodeCommit Repository** using the CLI or PowerShell command for this purpose:
@@ -529,7 +533,10 @@ With the generated Git credentials downloaded, we are ready to clone our reposit
 ```
 git clone https://git-codecommit.REPLACE_REGION.amazonaws.com/v1/repos/MythicalMysfitsService-Repository
 ```
-
+`Output`
+```
+git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/MythicalMysfitsService-Repository
+```
 This will tell us that our repository is empty!  Let's fix that by copying the application files into our repository directory using the following command:
 
 ```

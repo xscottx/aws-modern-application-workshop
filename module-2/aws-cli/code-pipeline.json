@@ -1,7 +1,7 @@
 {
   "pipeline": {
       "name": "MythicalMysfitsServiceCICDPipeline",
-      "roleArn": "REPLACE_ME_CODEPIPELINE_ROLE_ARN",
+      "roleArn": "arn:aws:iam::993906457390:role/MythicalMysfitsServiceCodePipelineServiceRole",
       "stages": [
         {
           "name": "Source",
@@ -85,7 +85,7 @@
       ],
       "artifactStore": {
         "type": "S3",
-        "location": "REPLACE_ME_ARTIFACTS_BUCKET_NAME"
+        "location": "mythical-mysfits-frontend-993906457390"
       }
   }
 }
