@@ -65,7 +65,7 @@ Also provided is a JSON file that can be used to batch insert a number of Mysfit
 
 `Bash`
 ```
-aws dynamodb batch-write-item --request-items file://~/environment/aws-modern-application-workshop/module-3/aws-cli/populate-dynamodb.json
+aws dynamodb batch-write-item --request-items file://module-3/aws-cli/populate-dynamodb.json
 ```
 `PowerShell`
 ```

@@ -2,8 +2,10 @@
 // `ng build ---prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+// WARNING: UI site: http://mythical-mysfits-frontend-993906457390.s3-website.us-east-1.amazonaws.com
+
 export const environment = {
-  production: false,
+  production: true,
   mysfitsApiUrl: 'http://mysfits-nlb-d6e3b09bebeccc1d.elb.us-east-1.amazonaws.com/api',
   categories: [
     {
