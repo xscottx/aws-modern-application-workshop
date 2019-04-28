@@ -83,6 +83,10 @@ Create the VPC Link for our upcoming REST API using the following commands:
 ```
 aws apigateway create-vpc-link --name MysfitsApiVpcLink --target-arns REPLACE_ME_NLB_ARN
 ```
+`Output`
+```
+aws apigateway create-vpc-link --name MysfitsApiVpcLink --target-arns arn:aws:elasticloadbalancing:us-east-1:993906457390:loadbalancer/net/mysfits-nlb/d6e3b09bebeccc1d
+```
 `PowerShell`
 
 **Note:** This command autoretrieves your load balancer ARN.
@@ -134,7 +138,7 @@ cd ./module-4/frontend/src/aws-exports.js
 CTRL-F through the file to search for the various places `REPLACE_ME` is located and awaiting your specific parameters.  Once the edits have been made, save the file and execute the following AWS CLI command:
 
 ```
-aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body file://~/environment/aws-modern-application-workshop/module-4/aws-cli/api-swagger.json --fail-on-warnings
+aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body file://module-4/aws-cli/api-swagger.json --fail-on-warnings
 ```
 
 Copy the response this command returns and save the `id` value for the next step:
@@ -160,6 +164,10 @@ Now, our API has been created, but it's yet to be deployed anywhere. To deploy o
 ```
 aws apigateway create-deployment --rest-api-id REPLACE_ME_WITH_API_ID --stage-name prod
 ```
+`Output`
+```
+aws apigateway create-deployment --rest-api-id e9ly4qedz6 --stage-name prod
+```
 `PowerShell`
 
 **Note:** This command autoretrieves your API Gateway ID.
@@ -172,6 +180,10 @@ With that, our REST API that's capable of user authorization is deployed and ava
 `Bash`
 ```
 curl https://REPLACE_ME_WITH_API_ID.execute-api.REPLACE_ME_WITH_REGION.amazonaws.com/prod/api/mysfits
+```
+`Output`
+```
+curl https://e9ly4qedz6.execute-api.us-east-1.amazonaws.com/prod/mysfits
 ```
 `PowerShell`
 ```

@@ -12,7 +12,7 @@
             "x-amazon-apigateway-authorizer": {
                 "type": "COGNITO_USER_POOLS",
                 "providerARNs": [
-                    "arn:aws:cognito-idp:REPLACE_ME_REGION:REPLACE_ME_ACCOUNT_ID:userpool/REPLACE_ME_COGNITO_USER_POOL_ID"
+                    "arn:aws:cognito-idp:us-east-1:993906457390:userpool/us-east-1_0emjUhRRG"
                 ]
             }
         }
@@ -48,10 +48,10 @@
                             }
                         }
                     },
-                    "connectionId": "REPLACE_ME_VPC_LINK_ID",
+                    "connectionId": "4x6ktu",
                     "httpMethod": "GET",
                     "type": "HTTP_PROXY",
-                    "uri": "http://REPLACE_ME_NLB_DNS/"
+                    "uri": "http://mysfits-nlb-d6e3b09bebeccc1d.elb.us-east-1.amazonaws.com/"
                 }
             },
             "options": {
@@ -123,10 +123,10 @@
                 },
                 "x-amazon-apigateway-integration": {
                     "connectionType": "VPC_LINK",
-                    "connectionId": "REPLACE_ME_VPC_LINK_ID",
+                    "connectionId": "4x6ktu",
                     "httpMethod": "GET",
                     "type": "HTTP_PROXY",
-                    "uri": "http://REPLACE_ME_NLB_DNS/mysfits",
+                    "uri": "http://mysfits-nlb-d6e3b09bebeccc1d.elb.us-east-1.amazonaws.com/api/mysfits",
                     "responses": {
                         "default": {
                             "statusCode": "200",
@@ -217,10 +217,10 @@
                         "integration.request.path.mysfitId": "method.request.path.mysfitId"
                     },
                     "connectionType": "VPC_LINK",
-                    "connectionId": "REPLACE_ME_VPC_LINK_ID",
+                    "connectionId": "4x6ktu",
                     "httpMethod": "GET",
                     "type": "HTTP_PROXY",
-                    "uri": "http://REPLACE_ME_NLB_DNS/mysfits/{mysfitId}",
+                    "uri": "http://mysfits-nlb-d6e3b09bebeccc1d.elb.us-east-1.amazonaws.com/api/mysfits/{mysfitId}",
                     "responses": {
                         "default": {
                             "statusCode": "200",
@@ -316,10 +316,10 @@
                         "integration.request.path.mysfitId": "method.request.path.mysfitId"
                     },
                     "connectionType": "VPC_LINK",
-                    "connectionId": "REPLACE_ME_VPC_LINK_ID",
+                    "connectionId": "4x6ktu",
                     "httpMethod": "POST",
                     "type": "HTTP_PROXY",
-                    "uri": "http://REPLACE_ME_NLB_DNS/mysfits/{mysfitId}/adopt",
+                    "uri": "http://mysfits-nlb-d6e3b09bebeccc1d.elb.us-east-1.amazonaws.com/api/mysfits/{mysfitId}/adopt",
                     "responses": {
                         "default": {
                             "statusCode": "200",
@@ -425,7 +425,7 @@
                         "integration.request.path.mysfitId": "method.request.path.mysfitId"
                     },
                     "connectionType": "VPC_LINK",
-                    "connectionId": "REPLACE_ME_VPC_LINK_ID",
+                    "connectionId": "4x6ktu",
                     "httpMethod": "POST",
                     "security": [{
                         "MysfitsUserPoolAuthorizer": [
@@ -433,7 +433,7 @@
                         ]
                     }],
                     "type": "HTTP_PROXY",
-                    "uri": "http://REPLACE_ME_NLB_DNS/mysfits/{mysfitId}/like",
+                    "uri": "http://mysfits-nlb-d6e3b09bebeccc1d.elb.us-east-1.amazonaws.com/api/mysfits/{mysfitId}/like",
                     "responses": {
                         "default": {
                             "statusCode": "200",
