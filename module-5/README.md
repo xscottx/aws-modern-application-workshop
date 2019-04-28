@@ -56,7 +56,9 @@ Next, let's clone that new and empty repository:
 ```
 git clone REPLACE_ME_WITH_ABOVE_CLONE_URL
 ```
-
+```
+git clone ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/MythicalMysfitsStreamingService-Repository
+```
 #### Copy the Streaming Service Code Base
 
 Now, let's move our working directory into this new repository:
